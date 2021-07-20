@@ -1,6 +1,7 @@
 //Mark Boady - Drexel University - Homework Assignment
 
 //This library makes reading integers easy
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
 class addUp
@@ -18,8 +19,12 @@ class addUp
  	EndFunction
  	*/
 	public static int addUp(int n)
-	{
-		return 0;
+	{		
+		if (n==0) {
+			return 0;
+		}else {
+			return n + addUp(n-1);
+		}
 	}
 	//You don't need to make any changes to the code below here
 	public static void main(String[] args)
@@ -28,10 +33,17 @@ class addUp
 		int result;
 		System.out.println("Hello.");
 		System.out.println("This program recursively adds up numbers from 0 to n");
-		System.out.println("Enter Number for n: ");
 		//Read the number they typed
 		Scanner scan = new Scanner(System.in);
-		num = scan.nextInt();
+		do {
+            System.out.print("Please enter a positive number: ");
+            while (!scan.hasNextInt()) {
+                String inputValue = scan.next();
+                System.out.printf("\"%s\" is not a valid number.\n", inputValue);
+                System.out.print("Please enter a positive number: ");
+            }
+            num = scan.nextInt();
+        } while (num < 0);
 		scan.close();
 		//Compute the result
 		result = addUp(num);

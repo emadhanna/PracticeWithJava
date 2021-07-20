@@ -16,8 +16,11 @@ class toBinary
 	//printBinary(75) should print 01001011
 	public static void printBinary(int numToConvert)
 	{
+		String withLeadingZeros = String.format("%8s", Integer.toBinaryString(numToConvert)).replace(' ', '0');
+		System.out.printf("The valuse of %d in binary is %s", numToConvert, withLeadingZeros);
     	return;
 	}
+	
 	//You don't need to make any changes to the code below here
 	public static void main(String[] args)
 	{
