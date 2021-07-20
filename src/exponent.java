@@ -11,9 +11,19 @@ class exponent
 	//For example exponent(3,4)=3^4=81
 	public static int exponent(int x, int y)
 	{
-		return (int) (y==0 ? 1: Math.pow(x, y));
+		int result = 1;
 		
+		if (y==0) {
+			return result;
+		}
+		
+		for (int counter = 1; counter <= y; counter++) {	
+			result *= x ;
+		}
+		
+		return result;
 	}
+	
 	//You don't need to make any changes to the code below here
 	public static void main(String[] args)
 	{

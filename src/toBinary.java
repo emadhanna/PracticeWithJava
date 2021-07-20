@@ -16,8 +16,31 @@ class toBinary
 	//printBinary(75) should print 01001011
 	public static void printBinary(int numToConvert)
 	{
-		String withLeadingZeros = String.format("%8s", Integer.toBinaryString(numToConvert)).replace(' ', '0');
-		System.out.printf("The valuse of %d in binary is %s", numToConvert, withLeadingZeros);
+		String remainder = "";
+		String binaryRepresentation = "";
+		int countLeadingZeros = 0 ;
+		String addingLeadingZeros = "";
+		
+		do {
+			remainder += Integer.toString(numToConvert%2);
+			numToConvert /= 2;
+		}while(numToConvert > 0);
+		
+		char[] revervseTheBinaryRepresentation = remainder.toCharArray();
+		
+		for (int counter = revervseTheBinaryRepresentation.length-1; counter>=0; counter--) {
+			binaryRepresentation += String.valueOf(revervseTheBinaryRepresentation[counter]);
+		}
+		
+		countLeadingZeros = 8 - binaryRepresentation.length();
+		
+		if (countLeadingZeros > 0) {
+			for (int counter = 0; counter < countLeadingZeros ; counter++) {
+				addingLeadingZeros += "0";
+			}
+		}
+		binaryRepresentation = addingLeadingZeros + binaryRepresentation;
+		System.out.printf("The valuse of %d in binary is %s", numToConvert, binaryRepresentation);
     	return;
 	}
 	
