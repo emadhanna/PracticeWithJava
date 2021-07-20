@@ -29,8 +29,21 @@ class toBinary
 		System.out.println("This program only works with numbers from 0 to 255.");
 		//Read the number they typed
 		Scanner scan = new Scanner(System.in);
-		System.out.println("Enter Number to Convert to Binary: ");
-		num = scan.nextInt();
+		
+		do {
+			System.out.println("Enter Number to Convert to Binary: ");
+            while (!scan.hasNextInt()) {
+                String inputValue = scan.next();
+                System.out.printf("\"%s\" is not a valid base number.\n", inputValue);
+                System.out.println("Enter Number to Convert to Binary: ");
+            }
+            num = scan.nextInt();
+            if (!(num >=0 && num <=255)) {
+            	System.out.println("Make sure the number is between 0 and 255");
+            	continue;
+            }
+        } while (!(num >=0 && num <=255));
+		
 		scan.close();
 		//Compute the result
 		printBinary(num);
