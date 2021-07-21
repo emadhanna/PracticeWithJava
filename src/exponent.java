@@ -11,17 +11,19 @@ class exponent
 	//For example exponent(3,4)=3^4=81
 	public static int exponent(int x, int y)
 	{
-		int result = 1;
+		int finalResult = 1;
 		
 		if (y==0) {
-			return result;
+			
+			return finalResult;
 		}
 		
 		for (int counter = 1; counter <= y; counter++) {	
-			result *= x ;
+			
+			finalResult *= x ;
 		}
 		
-		return result;
+		return finalResult;
 	}
 	
 	//You don't need to make any changes to the code below here

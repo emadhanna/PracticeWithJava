@@ -14,6 +14,7 @@ class sumRange
 	{	
 		int result = 0;
 		for (int counter = x; counter <= y; counter++) {
+			
 			result += counter;
 		}
 		return result;

@@ -29,16 +29,20 @@ class toBinary
 		char[] revervseTheBinaryRepresentation = remainder.toCharArray();
 		
 		for (int counter = revervseTheBinaryRepresentation.length-1; counter>=0; counter--) {
+			
 			binaryRepresentation += String.valueOf(revervseTheBinaryRepresentation[counter]);
 		}
 		
 		countLeadingZeros = 8 - binaryRepresentation.length();
 		
 		if (countLeadingZeros > 0) {
+			
 			for (int counter = 0; counter < countLeadingZeros ; counter++) {
+				
 				addingLeadingZeros += "0";
 			}
 		}
+		
 		binaryRepresentation = addingLeadingZeros + binaryRepresentation;
 		System.out.printf("The valuse of %d in binary is %s", numToConvert, binaryRepresentation);
     	return;

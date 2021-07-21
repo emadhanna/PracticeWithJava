@@ -21,10 +21,10 @@ class reversePrint
 		String[] captureOneWord = text.split(" ");
 		char[] setOfCharacterFromFirstWordCaptured = captureOneWord[0].toCharArray();
 		String wordReversed = "";
+		
 		for (int counter= setOfCharacterFromFirstWordCaptured.length-1; counter>=0; counter--) {
 			
 			wordReversed = wordReversed + (String.valueOf(setOfCharacterFromFirstWordCaptured[counter]));
-//			System.out.print(setOfCharacterFromFirstWordCaptured[counter]);
 		}
 		
 		System.out.println(wordReversed);
